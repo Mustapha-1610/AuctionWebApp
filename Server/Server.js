@@ -4,6 +4,9 @@ import cookieParser from "cookie-parser";
 import connectDB from "../Server/DB/dbConfig.js";
 import cors from "cors";
 import bidderRouter from "./Bidder/router.js";
+import sellerRouter from "./Seller/router.js";
+import auctionListingRouter from "./AuctionListing/router.js";
+import auctionRoomRouter from "./AuctionRoom/router.js";
 dotenv.config();
 const port = process.env.Port;
 
@@ -24,7 +27,10 @@ app.use(
   })
 );
 
-app.use("/bidder", bidderRouter);
+app.use("/api/bidder", bidderRouter);
+app.use("/api/auctionlisting", auctionListingRouter);
+app.use("/api/seller", sellerRouter);
+app.use("/api/auctionroom", auctionRoomRouter);
 
 app.get("/", (req, res) => res.send("server is ready"));
 

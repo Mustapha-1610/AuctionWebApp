@@ -3,7 +3,7 @@ import tokenGenerator from "./tokenGenerator.js";
 import asyncHandler from "express-async-handler";
 import bcrypt from "bcryptjs";
 import { sendBidderConfirmationEmail } from "./mailConfig.js";
-import AuctionListing from "../AuctionListing/model.js";
+import AuctionListing from "../AuctionListing/modal.js";
 
 // create a bidder account
 export const createBidder = asyncHandler(async (req, res, next) => {
