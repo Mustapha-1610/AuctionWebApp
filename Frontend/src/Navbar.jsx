@@ -1,4 +1,4 @@
-import SellerNavbar from "./Pages/seller/Components/sellerNavbar";
+import SellerNavbar from "./Pages/seller/Components/SellerNavbar";
 import BidderNavbar from "./Pages/bidder/Components/BidderNavbar";
 import AdminNavbar from "./Pages/admin/Components/AdminNavbar";
 import LandingPageNavbar from "./LandingPages/components/LandingPageNavbar";
