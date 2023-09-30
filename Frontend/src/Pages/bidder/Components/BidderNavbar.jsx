@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { bidderLogout } from "../Slices/bidderSlice";
-import { SetDefaultNavbar } from "../../../LandingPages/Slices/LandingPageSlice";
 const BidderNavbar = () => {
   const dispatch = useDispatch();
   return (
@@ -43,7 +42,6 @@ const BidderNavbar = () => {
             <button
               onClick={() => {
                 dispatch(bidderLogout());
-                dispatch(SetDefaultNavbar());
               }}
             >
               logout

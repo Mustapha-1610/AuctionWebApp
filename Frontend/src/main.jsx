@@ -4,7 +4,7 @@ import App from "./App.jsx";
 import "./index.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./Navbar.jsx";
-import Ongoing from "./LandingPages/pages/ongoing.jsx";
+import Ongoing from "./LandingPages/pages/Ongoing.jsx";
 import BidderLogin from "./LandingPages/pages/BidderLogin.jsx";
 import BidderSignup from "./LandingPages/pages/BidderSignup.jsx";
 import store from "./Store/store.js";

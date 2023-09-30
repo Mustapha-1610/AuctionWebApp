@@ -3,13 +3,11 @@ import { apiSlice } from "./apiSlice.js";
 import { adminReducer } from "../Pages/admin/Slices/adminSlice.js";
 import { bidderReducer } from "../Pages/bidder/Slices/bidderSlice.js";
 import { sellerReducer } from "../Pages/seller/Slices/sellerSlice.js";
-import { NavbarReducer } from "../LandingPages/Slices/LandingPageSlice.js";
 const store = configureStore({
   reducer: {
     adminData: adminReducer,
     bidderData: bidderReducer,
     sellerData: sellerReducer,
-    NavbarState: NavbarReducer,
     [apiSlice.reducerPath]: apiSlice.reducer,
   },
   middleware: (getDefaultMiddleware) =>

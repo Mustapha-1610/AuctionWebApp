@@ -5,17 +5,19 @@ import LandingPageNavbar from "./LandingPages/components/LandingPageNavbar";
 import { useSelector } from "react-redux";
 import React, { useState, useEffect } from "react";
 const Navbar = () => {
-  const NavbarState = useSelector((state) => state?.NavbarState.CurrentNavbar);
+  const bidder = useSelector((state) => state?.bidderData.bidderInfo);
+  const seller = useSelector((state) => state?.sellerData.sellerInfo);
+  const admin = useSelector((state) => state?.adminData.adminInfo);
   const [navComponent, setNavComponent] = useState(<LandingPageNavbar />);
   useEffect(() => {
-    NavbarState === "LandingPageNavbar"
+    !bidder && !seller && !admin
       ? setNavComponent(<LandingPageNavbar />)
-      : NavbarState === "BidderNavbar"
+      : bidder
       ? setNavComponent(<BidderNavbar />)
-      : NavbarState === "SellerNavbar"
+      : seller
       ? setNavComponent(<SellerNavbar />)
       : setNavComponent(<AdminNavbar />);
-  }, [NavbarState]);
+  }, [bidder, seller, admin]);
   return <>{navComponent}</>;
 };
 export default Navbar;

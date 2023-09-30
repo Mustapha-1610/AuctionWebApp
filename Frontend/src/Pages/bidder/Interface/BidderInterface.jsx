@@ -16,7 +16,7 @@ function BidderInterface() {
       <Route>
         <Route path="" element={<BidderPrivateRouter />}>
           <Route path="/profile" element={<PorfilePage />} />
-          <Route path="/history" elemen={<HistoryPage />} />
+          <Route path="/history" element={<HistoryPage />} />
           <Route path="/home" element={<HomePage />} />
           <Route path="/ongoing" element={<OngoingAuctions />} />
           <Route path="/edit" element={<EditInfo />} />

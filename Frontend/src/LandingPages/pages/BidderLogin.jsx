@@ -4,8 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useSendBidderActivationMailMutation } from "../../Pages/bidder/Slices/bidderApiSlice";
 import { setBidderCredentials } from "../../Pages/bidder/Slices/bidderSlice.js";
 import { useNavigate } from "react-router-dom";
-import { setCurrentNavbar } from "../Slices/LandingPageSlice.js";
-const LoginPage = () => {
+const BidderLogin = () => {
   const [Email, setEmail] = useState("");
   const [Password, setPassword] = useState("");
   const [login, { isLoading }] = useBidderloginMutation();
@@ -23,7 +22,6 @@ const LoginPage = () => {
       const res = await login({ Email, Password }).unwrap();
       console.log(res);
       dispatch(setBidderCredentials({ ...res?.bidder }));
-      dispatch(setCurrentNavbar("BidderNavbar"));
     } catch (err) {
       console.log(err);
       setErrorMessage(
@@ -83,4 +81,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default BidderLogin;
