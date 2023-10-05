@@ -20,6 +20,7 @@ bidderRouter
   .post(protectBidderRoutes, bidderController.getProfile);
 //
 bidderRouter
+
   .route("/participate")
   .post(protectBidderRoutes, bidderController.AuctionParticipation);
 //

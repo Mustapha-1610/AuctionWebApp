@@ -1,5 +1,7 @@
 import { apiSlice } from "../../../Store/apiSlice";
 const Bidder_URL = "/api/bidder";
+const AuctionListing_URL = "/api/auctionlisting";
+const AuctionRoom_URL = "/api/auctionroom";
 
 export const biddersApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({

@@ -200,7 +200,6 @@ export const editBidderInformations = asyncHandler(async (req, res) => {
       FullAdress,
       PhoneNumber,
     } = req.body;
-    console.log(Email);
 
     let bidder;
     if (Email) {
@@ -210,13 +209,15 @@ export const editBidderInformations = asyncHandler(async (req, res) => {
         return res.json({ Message: "Email Exists Allready" });
       }
     }
-
-    bidder = await bidder.findOne({ PhoneNumber });
-    if (bidder) {
-      return res.json({
-        Message: "Phone Number Allready Used On Another Account !",
-      });
+    if (PhoneNumber) {
+      bidder = await bidder.findOne({ PhoneNumber });
+      if (bidder) {
+        return res.json({
+          Message: "Phone Number Allready Used On Another Account !",
+        });
+      }
     }
+
     bidder = req.bidder;
     Email ? (bidder.Email = Email) : null;
     Name ? (bidder.Name = Name) : null;
